@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <?php include './request.php';?>
+        <button type = "button" id="search">Search</button>
+        <script>
+            document.getElementById("search").onclick = xhttp.open("GET", "request.php", true);
+            alert(xhttp.send());
+        </script>
+    </body>
+</html>
