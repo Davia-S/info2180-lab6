@@ -3,23 +3,28 @@
     <body>
         <?php include './request.php';?>
         <form>
+            <p> Lookup the definition of ajax, definition, bar, html, css, javascript or php</p>
+            <br>
             <input type = "text" name = "searchField">
             <input id="search" type = "submit" value = "Search">
         </form>
 
-        <script>
-            //document.getElementById("search").onclick = xhttp.open("GET", "request.php", true);
-            //alert(xhttp.send());
-            function definitions(){
-                $.ajax({
-                    type: "GET",
-                    url: "./request.php",
-                    data: somedata,
-                    success: function(data){
-                        alert(data);
-                    }
-                });
-            }
-        </script>
+        <div>
+            <script>
+                //document.getElementById("search").onclick = xhttp.open("GET", "request.php", true);
+                //alert(xhttp.send());
+                document.getElementById("search").onclick = definitions;
+                function definitions(){
+                    $.ajax({
+                        type: "GET",
+                        url: "./request.php",
+                        data: somedata,
+                        success: function(data){
+                            alert(data);
+                        }
+                    });
+                }
+            </script>
+        </div>
     </body>
 </html>
