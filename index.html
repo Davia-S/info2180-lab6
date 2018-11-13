@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html>
     <body>
-        <?php include 'request.php';?>
-        <button type = "button" id="search">Search</button>
+        <?php include './request.php';?>
+        <form>
+            <input type = "text" name = "searchField">
+            <input id="search" type = "submit" value = "Search">
+        </form>
+
         <script>
-            document.getElementById("search").onclick = xhttp.open("GET", "request.php", true);
-            alert(xhttp.send());
+            //document.getElementById("search").onclick = xhttp.open("GET", "request.php", true);
+            //alert(xhttp.send());
+            function definitions(){
+                $.ajax({
+                    type: "GET",
+                    url: "./request.php",
+                    data: somedata,
+                    success: function(data){
+                        alert(data);
+                    }
+                });
+            }
         </script>
     </body>
 </html>
