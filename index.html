@@ -1,30 +1,18 @@
 <!DOCTYPE html>
 <html>
     <body>
+        <head>
+            <script src = "java.js"></script>
+        </head>
         <?php include './request.php';?>
-        <form>
+        <form onsubmit="javascript:definitions()">
             <p> Lookup the definition of ajax, definition, bar, html, css, javascript or php</p>
             <br>
-            <input type = "text" name = "searchField">
+            <input id = "searchField"type = "text" name = "searchField">
             <input id="search" type = "submit" value = "Search">
+            <input type="submit" value = "Get all definitions"/>
         </form>
 
-        <div>
-            <script>
-                //document.getElementById("search").onclick = xhttp.open("GET", "request.php", true);
-                //alert(xhttp.send());
-                document.getElementById("search").onclick = definitions;
-                function definitions(){
-                    $.ajax({
-                        type: "GET",
-                        url: "./request.php",
-                        data: somedata,
-                        success: function(data){
-                            alert(data);
-                        }
-                    });
-                }
-            </script>
-        </div>
+        <div id="result"> </div>
     </body>
 </html>
